@@ -53,12 +53,14 @@ public class GameMaster : MonoBehaviour
         player.OnSynthesisAction = SynthesisAction;
         float handWidth = (float)(player.Hand.cardInterval * 6);
         player.Hand.cardInterval = (float)(handWidth / handMax);
-        SendCardTo(player);
         enemy = enemyGenerator.SpawnEnemy(enemyNum);
         enemyFiled.AddEnemy(enemy);
         synthesis.OnSynthesisPanel();
         deck.DeckListOpen();
         deck.DeckSet();
+
+        SendCardTo(player);
+
         TurnSetup();
     }
 
